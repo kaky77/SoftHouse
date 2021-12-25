@@ -1,0 +1,20 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of conception">
+      <h3>{{ user.firstName }}   {{ user.lastName }}</h3>
+      <p>{{user.tel}}  -->   {{ user.email }} </p>
+      <p>Qualification Profésionnelle :  {{ user.Job }} </p>
+      <p>Décrit Nous Votre Problème :  {{ user.probleme }} </p>
+      <p>Quelles Seront Vos Attentes ? :  {{ user.attente }}</p>
+      <p>Applications ? :  {{user.application}}</p>
+      <button mat-flat-button color="primary" (click)="onDeleteBook(user)">
+        <mat-icon>person</mat-icon>
+        <span>Delete</span>
+      </button>
+        <a href="mailto: {{ user.email }}">
+          <button mat-flat-button  >
+            <mat-icon>chat</mat-icon>
+            <span>call</span>
+          </button>
+        </a>
+    </li>
+  </ul>

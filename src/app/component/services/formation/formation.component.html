@@ -1,0 +1,62 @@
+<div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="UserForm" (ngSubmit)="onSubmitForm()">
+      <div class="form-group">
+        <label for="firstName">Prénom(s)</label>
+        <input type="text" id="firstName" class="form-control" formControlName="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" id="lastName" class="form-control" formControlName="lastName">
+      </div>
+      <div class="form-group">
+        <label for="tel">Numéro(tel)</label>
+        <input type="number" id="tel" class="form-control" formControlName="tel">
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse e-mail</label>
+        <input type="text" id="email" class="form-control" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="certification">Avec ou Sans Certification ?</label>
+        <select id="certification" class="form-control" formControlName="certification">
+            <option value="OUI">OUI</option>
+            <option value="NON">NON</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="langage">Langage de Formations ?</label>
+        <select id="langage" class="form-control" formControlName="langage">
+          <option value="HTML">HTML</option>
+            <option value="SCSS">SCSS</option>
+            <option value="BOOTSTRAP">BOOTSTRAP</option>
+            <option value="JAVA SCRIPT">JAVA SCRIPT</option>
+            <option value="PHP">PHP</option>
+            <option value="ANGULAR">ANGULAR</option>
+            <option value="REACT">REACT</option>
+            <option value="JAVA">JAVA</option>
+            <option value="PHYTON">PHYTON</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="C">C</option>
+            <option value="SQL">SQL</option>
+            <option value="ORACLE">ORACLE</option>
+
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="list">
+            Liste Des Requettes De Formations 
+          </label>
+          <input type="password" id="list" placeholder="password" class="form-control" name="list" ngModel required>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Confirmer</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="card-wrapper">
+    <mat-card class="joindre-card">
+      <mat-card-header>
+        <img src="assets/img/sh.jpg" mat-card-avatar />
+        <mat-card-title> Job Listes </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+       <p>Vous Trouverez Ici La Liste Des Offres D'emplois Au Sein De Notre Service. A Noter Qu'il Se Peut Que La Liste 
+           Soit Vide Parce Que Nous Ne Sommes Pas En Période De Recrutement. Merci De Revisiter Cette Page Prochainement. 
+       </p>
+       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="list">
+            Ajouter Des Offres D'emplois 
+          </label>
+          <input type="password" id="list" placeholder="password" class="form-control" name="list" ngModel required>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Confirmer</button>
+      </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+

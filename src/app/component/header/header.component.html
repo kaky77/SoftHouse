@@ -1,0 +1,130 @@
+<mat-toolbar>
+  <button mat-button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <!--sous menu du menu icon-->
+  <mat-menu #menu="matMenu">
+    <div>
+      <button mat-menu-item routerLink="Accueil">
+        <mat-icon>home</mat-icon>
+        <span>ACCUEIL</span>
+      </button>
+      <button mat-menu-item routerLink="Services/Conception">
+        <mat-icon>build</mat-icon>
+        <span>CONCEPTION D'APPLICATIONS</span>
+      </button>
+      <button mat-menu-item routerLink="Services/Expertise">
+        <mat-icon>engineering</mat-icon>
+        <span>PROFITEZ DE L'EXPERTISE</span>
+      </button>
+      <button mat-menu-item routerLink="Services/formation">
+        <mat-icon>school</mat-icon>
+        <span>FORMATION</span>
+      </button>
+      <button mat-menu-item routerLink="Services/Offremploi">
+        <mat-icon>watch</mat-icon>
+        <span>OFFRES D'EMPLOI</span>
+      </button>
+      <button mat-menu-item routerLink="Quisommesnous/SoftHouse">
+        <mat-icon>groups</mat-icon>
+        <span>SOFT HOUSE</span>
+      </button>
+      <button mat-menu-item routerLink="Quisommesnous/Realisation">
+        <mat-icon>construction</mat-icon>
+        <span>REALISATIONS</span>
+      </button>
+      <button mat-menu-item routerLink="Quisommesnous/Partenaires">
+        <mat-icon>group</mat-icon>
+        <span>PARTENAIRES</span>
+      </button>
+      <button mat-menu-item  routerLink="Nousjoindre"
+      >
+        <mat-icon>phone</mat-icon>
+        <span>NOUS JOINDRE</span>
+      </button>
+    </div>
+  </mat-menu>
+  <!-- logo -->
+  <span class="center"><img src="assets/img/sh.jpg" width="65" height="60" ></span> 
+  <span>SOFT HOUSE</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon search-icon " aria-label="Example icon-button with heart icon" [matMenuTriggerFor]="person" >
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #person="matMenu">
+    <button mat-menu-item>
+      <mat-icon>person</mat-icon>
+      <span>PROFIL</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>build</mat-icon>
+      <span>PARAMETRES</span>
+    </button>
+    <button mat-menu-item routerLinkActive="active" *ngIf="!isAuth" routerLink="Auth/signup" >
+      <mat-icon>forward</mat-icon>
+      <span>CREER UN COMPTE</span>
+    </button>
+    <button mat-menu-item routerLinkActive="active" *ngIf="!isAuth" routerLink="Auth/signin">
+      <mat-icon>lock</mat-icon>
+      <span>SE CONNECTER</span>
+    </button>
+    <button mat-menu-item (click)="onSignOut()"
+    style="cursor:pointer"
+    *ngIf="isAuth" >
+      <mat-icon>key</mat-icon>
+      <span>DECONNEXION</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>chat</mat-icon>
+      <span>MESSAGES</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-toolbar color="primary"> 
+  <span class="example-logospacer"></span>
+    <button mat-button  class="nav-bar" routerLink="Accueil">
+      <span>ACCUEIL</span>
+    </button>
+    <button mat-button  class="nav-bar" [matMenuTriggerFor]="service">
+      <span>SERVICES</span>
+    </button>
+    <mat-menu #service="matMenu">
+      <buton mat-menu-item routerLink="Services/Conception">
+        <span>CONCEPTION D'APPLICATIONS</span>
+      </buton>
+      <buton mat-menu-item routerLink="Services/Expertise">
+        <span>PROFITEZ DE L'EXPERTISE</span>
+      </buton>
+      <buton mat-menu-item routerLink="Services/formation">
+        <span>FORMATION</span>
+      </buton>
+      <buton mat-menu-item routerLink="Services/Offremploi">
+        <span>OFFRES D'EMPLOI</span>
+      </buton>
+    </mat-menu>
+   
+    <button mat-button  class="nav-bar" [matMenuTriggerFor]="presentation">
+      <span>QUI SOMMES NOUS</span>
+    </button>
+    <mat-menu #presentation="matMenu">
+      <buton mat-menu-item routerLink="Quisommesnous/SoftHouse">
+        <span>SOFT HOUSE</span>
+      </buton>
+      <buton mat-menu-item routerLink="Quisommesnous/Realisation">
+        <span>REALISATIONS</span>
+      </buton>
+      <buton mat-menu-item routerLink="Quisommesnous/Partenaires">
+        <span>PARTENAIRES</span>
+      </buton>
+    </mat-menu>
+    <button mat-button  class="nav-bar" routerLink="Nousjoindre">
+      <span>NOUS JOINDRE</span>
+    </button>
+    <button mat-icon-button class="example-icon search-icon " aria-label="Example icon-button with heart icon" >
+      <mat-icon>search</mat-icon>
+    </button>
+</mat-toolbar>
+
+
+

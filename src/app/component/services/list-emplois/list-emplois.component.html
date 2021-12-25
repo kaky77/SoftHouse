@@ -1,0 +1,42 @@
+<div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+      <div class="form-group">
+        <label for="jobName">Nom De L'Emploi</label>
+        <input type="text" id="jobName" class="form-control" formControlName="jobName">
+      </div>
+      <div class="form-group">
+        <label for="description">Description </label>
+        <input type="text" id="description" class="form-control" formControlName="description">
+      </div>
+      <div class="form-group">
+        <label for="Qualite">Qualité Recherchée</label>
+        <input type="text" id="Qualite" class="form-control" formControlName="Qualite">
+      </div>
+      <div class="form-group">
+        <label for="Salaire">Salaire</label>
+        <input type="text" id="Salaire" class="form-control" formControlName="Salaire">
+      </div>
+      <div class="form-group">
+        <label for="type">Type D'Emploi ?</label>
+        <select id="type" class="form-control" formControlName="type">
+            <option value="temps plein ">temps plein</option>
+            <option value="temps partiel">temps partiel</option>
+            <option value="contrat">contrat</option>
+            <option value="stage">stage</option>
+            <option value="bénévolat">bénévolat</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="horaire">Salaire</label>
+        <input type="text" id="horaire" class="form-control" formControlName="horaire">
+      </div>
+      <div class="form-group">
+        <label for="teletravail">Télétravail ?</label>
+        <select id="teletravail" class="form-control" formControlName="teletravail">
+          <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Publier</button>
+    </form>
+  </div>
