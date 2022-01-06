@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Formation } from 'src/app/models/formation';
 import { FormationService } from 'src/service/formation.service';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,16 +24,20 @@ export class FormationComponent implements OnInit {
 
   initForm(){
     this.UserForm = this.formBuilder.group({
-      firstName: '',
-      lastName: '',
+      firstName:['',Validators.required],
+      lastName:['',Validators.required],
       tel: 0 ,
-      email: '',
-      langage: '',
-      certification: '',
+      email:['',Validators.required],
+      langage:['',Validators.required],
+      certification:['',Validators.required]
     });
   }
 
   onSubmitForm(){
+    if(this.UserForm.invalid)
+    {
+      return;
+    }
     const formValue=this.UserForm.value;
     const newUser = new Formation(
       formValue['firstName'],

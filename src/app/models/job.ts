@@ -1,6 +1,7 @@
+
 export class Job {
     constructor(
-           public jobName:string,
+           public Name:string,
            public description:string, 
            public Qualite :string,
            public Salaire : string,

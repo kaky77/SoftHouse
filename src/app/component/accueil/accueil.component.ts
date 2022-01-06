@@ -18,7 +18,7 @@ export class AccueilComponent implements OnInit {
   }
 
   onExpertise() {
-    this.router.navigate(['Services/', 'Expertise']);
+    this.router.navigate(['Quisommesnous/', 'SoftHouse']);
   }
 
   onJob() {

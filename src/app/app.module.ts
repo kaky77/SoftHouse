@@ -11,7 +11,6 @@ import { HeaderComponent } from './component/header/header.component';
 import { AccueilComponent } from './component/accueil/accueil.component';
 import { ServicesComponent } from './component/services/services.component';
 import { ConceptionComponent } from './component/services/conception/conception.component';
-import { ExpertiseComponent } from './component/services/expertise/expertise.component';
 import { OffremploiComponent } from './component/services/offremploi/offremploi.component';
 import { QuisommesnousComponent } from './component/quisommesnous/quisommesnous.component';
 import { SoftHouseComponent } from './component/quisommesnous/soft-house/soft-house.component';
@@ -37,7 +36,9 @@ import { ListService } from 'src/service/list.service';
 import { FormationService } from 'src/service/formation.service';
 import { ListformationComponent } from './component/services/listformation/listformation.component';
 import { ListEmploisComponent } from './component/services/list-emplois/list-emplois.component';
-
+import { JobService } from 'src/service/job.service';
+import { HammerModule } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 const Approutes:Routes=[
   {path:'Auth/signup',component : SignupComponent},
@@ -51,7 +52,6 @@ const Approutes:Routes=[
   {path:'Nousjoindre',canActivate: [AuthGuardService],component:NousjoindreComponent},
   {path:'Services/Conception',canActivate: [AuthGuardService],component:ConceptionComponent},
   {path:'Services/formation',canActivate: [AuthGuardService],component:FormationComponent},
-  {path:'Services/Expertise',canActivate: [AuthGuardService],component:ExpertiseComponent},
   {path:'Services/Offremploi',canActivate: [AuthGuardService],component:OffremploiComponent},
   {path:'Quisommesnous/Partenaires',canActivate: [AuthGuardService],component:PartenaireComponent},
   {path:'Quisommesnous/Realisation',canActivate: [AuthGuardService],component:RealisationComponent},
@@ -69,7 +69,6 @@ const Approutes:Routes=[
     AccueilComponent,
     ServicesComponent,
     ConceptionComponent,
-    ExpertiseComponent,
     OffremploiComponent,
     QuisommesnousComponent,
     SoftHouseComponent,
@@ -79,6 +78,7 @@ const Approutes:Routes=[
     ListconceptionComponent,
     FormationComponent,
     ListformationComponent,
+    ListEmploisComponent
   ],
   imports: [
     BrowserModule,
@@ -96,11 +96,14 @@ const Approutes:Routes=[
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    HammerModule,
+    CarouselModule
+    
   ],
   providers: [ AuthGuardService,
                AuthService,
                ListService,
+               JobService,
                FormationService
   ],
   bootstrap: [AppComponent]

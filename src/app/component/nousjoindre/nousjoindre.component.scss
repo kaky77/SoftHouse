@@ -5,3 +5,15 @@
   .map {
     text-align: right;
   }
+
+  .joindre-card:hover{
+    text-shadow: none !important;
+    box-sizing: border-box !important;
+    cursor:auto !important;
+    transition: all 0.3s ease !important;
+    -webkit-transform: scale(1.1) !important;
+    -ms-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+    z-index: 1;
+    box-shadow:  0 32px 80px 14px rgb(135,206,250), 0 0 0 1px rgb(135,206,250);
+  }

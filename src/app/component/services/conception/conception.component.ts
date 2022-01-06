@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Conception } from 'src/app/models/conception';
 import { ListService } from 'src/service/list.service';
@@ -27,19 +27,23 @@ export class ConceptionComponent implements OnInit {
 
   initForm(){
     this.userForm = this.formBuilder.group({
-      firstName: '',
-      lastName: '',
+      firstName: ['',Validators.required],
+      lastName: ['',Validators.required],
       tel: 0 ,
-      email: '',
-      Job: '',
-      probleme: '',
-      attente: '',
-      application: ''
+      email: ['',Validators.required],
+      Job: ['',Validators.required],
+      probleme: ['',Validators.required],
+      attente: ['',Validators.required],
+      application: ['',Validators.required]
 
     });
   }
 
   onSubmitForm(){
+    if(this.userForm.invalid)
+    {
+      return;
+    }
     const formValue=this.userForm.value;
     const newUser = new Conception(
       formValue['firstName'],

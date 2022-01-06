@@ -6,7 +6,8 @@
       </mat-card-header>
       <mat-card-content>
        <p>Vous Trouverez Ici La Liste Des Offres D'emplois Au Sein De Notre Service. A Noter Qu'il Se Peut Que La Liste 
-           Soit Vide Parce Que Nous Ne Sommes Pas En Période De Recrutement. Merci De Revisiter Cette Page Prochainement. 
+           Soit Vide Parce Que Nous Ne Sommes Pas En Période De Recrutement.Appuyer Sur Le Bouton Postuler Et Envoyer Nous Votre CV Et
+           Autres Documents Tout En Mentionnant Le Nom De L'Offre. Merci De Revisiter Cette Page Prochainement. 
        </p>
        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
@@ -16,8 +17,30 @@
           <input type="password" id="list" placeholder="password" class="form-control" name="list" ngModel required>
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Confirmer</button>
+        
       </form>
       </mat-card-content>
     </mat-card>
   </div>
 
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of job">
+      <h3>Emploi: {{user.Name}}  </h3>
+      <p>Description: {{user.description}} </p>
+      <p>Qualités recherchées: {{user.Qualite}} </p>
+      <p>Salaire: {{user.Salaire}}</p>
+      <p>Type D'Emploi: {{user.type}}</p>
+      <p>Horaires: {{user.horaire}}</p>
+      <p>Télétravail: {{user.teletravail}}</p>
+      <button *ngIf="pass" mat-flat-button color="primary" (click)="onDeleteBook(user)">
+        <mat-icon>person</mat-icon>
+        <span>Delete</span>
+      </button>
+      <a href="mailto:soft-housebf@gmail.com"> 
+        <button mat-flat-button  >
+          <mat-icon>chat</mat-icon>
+          <span>Postuler</span>
+        </button>
+      </a>
+    </li>
+  </ul>

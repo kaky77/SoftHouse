@@ -1,1 +1,43 @@
-<p>soft-house works!</p>
+<h1>SoftHouse</h1>
+<owl-carousel-o [options]="customOptions">
+<ng-container *ngFor="let slide of slides">
+  <ng-template carouselSlide [id]!="slide.id">
+    <img [src]="slide.img" >
+  </ng-template>
+</ng-container>
+</owl-carousel-o>
+
+<div class="card-wrapper">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <img
+          src="assets/img/sh.jpg"
+          mat-card-avatar />
+        <mat-card-title>SOFT HOUSE SARL</mat-card-title>
+        <mat-card-subtitle>
+            Présentation
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+            SOFT HOUSE SARL est une société spécialisée dans le domaine de l’informatique et de la télécommunication. 
+            Le siège social est à Ouagadougou dans le quartier Ouaga 2000, sis à l’intersection de l’Avenue Hadj Salifou CISSE / Rue Cuylits GUNTHEF, Côté Sud-Est du Commissariat Ouaga 2000.
+            Adresse postale est : 11 BP 1699 Ouagadougou 11, Burkina Faso
+            Tél : 25 37 68 65 / 70 24 89 80 / 70 22 40 22 
+            Les références d’immatriculation sont les suivantes :
+            N°IFU : 00077715 C 
+            N°RCCM : BFOUA2016B4999 
+            N°CNSS : 1254664 J 
+            Elle compte de nos jours, une dizaine d’ingénieurs informaticiens dont les expériences varient de trois (3) à vingt-cinq (22) ans. Certains ont travaillé dans de grandes sociétés du pays (CENATRIN, DATASYS, LIPTINFOR, ONATEL, ONEA, etc.). 
+
+        </p>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="onclick()">LIKE</button>
+        ☺ {{ likesCount }}
+      </mat-card-actions>
+    </mat-card>
+  
+  </div>

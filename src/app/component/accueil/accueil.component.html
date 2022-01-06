@@ -1,4 +1,26 @@
 <div class="card-wrapper">
+  <mat-card class="expertise-card">
+    <mat-card-header>
+      <img src="assets/img/expert.jpg" mat-card-avatar />
+      <mat-card-title>SoftHouse </mat-card-title>
+      <mat-card-subtitle>
+        Expertise, Contre Expertise et Proposition De Solution 
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image style="width: 50%;" src="assets/img/expert.jpg" alt="expertise application">
+    <mat-card-content>
+      <p>
+        SoftHouse, la grande maison d'informatique.
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button class="btn btn-primary" (click)="onExpertise()">PAR ICI</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="card-wrapper">
     <mat-card class="conception-card">
       <mat-card-header>
         <img src="assets/img/appli.jpg" mat-card-avatar />
@@ -19,31 +41,6 @@
       </mat-card-actions>
     </mat-card>
   </div>
-
-
-  <div class="card-wrapper">
-    <mat-card class="expertise-card">
-      <mat-card-header>
-        <img src="assets/img/expert.jpg" mat-card-avatar />
-        <mat-card-title>Profite De Notre Expertise </mat-card-title>
-        <mat-card-subtitle>
-          Expertise, Contre Expertise et Proposition De Solution 
-        </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image style="width: 50%;" src="assets/img/expert.jpg" alt="expertise application">
-      <mat-card-content>
-        <p>
-          Dans le soucis de vous faire gagner du temps nous offrons des services de consultant et d'assistance.
-          N'hésitez pas à nous contacter.
-        </p>
-      </mat-card-content>
-  
-      <mat-card-actions>
-        <button mat-raised-button class="btn btn-primary" (click)="onExpertise()">PAR ICI</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-
 
   <div class="card-wrapper">
     <mat-card class="job-card">

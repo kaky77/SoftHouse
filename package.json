@@ -23,7 +23,10 @@
     "bootstrap": "^3.3.7",
     "bootstrap-icons": "^1.7.2",
     "firebase": "^9.6.1",
+    "jquery": "^3.6.0",
+    "ngx-owl-carousel-o": "^7.0.1",
     "rxjs": "~7.4.0",
+    "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-realisation',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RealisationComponent implements OnInit {
 
+  @Input() likesCount: number=0;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onclick(){
+    this.likesCount++;
   }
 
 }

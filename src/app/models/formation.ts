@@ -7,4 +7,4 @@ export class Formation {
            public langage : string,
            public certification: string,
      ) { }
-   }
+}
