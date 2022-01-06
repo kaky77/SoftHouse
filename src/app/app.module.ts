@@ -15,7 +15,6 @@ import { OffremploiComponent } from './component/services/offremploi/offremploi.
 import { QuisommesnousComponent } from './component/quisommesnous/quisommesnous.component';
 import { SoftHouseComponent } from './component/quisommesnous/soft-house/soft-house.component';
 import { RealisationComponent } from './component/quisommesnous/realisation/realisation.component';
-import { PartenaireComponent } from './component/quisommesnous/partenaire/partenaire.component';
 import { NousjoindreComponent } from './component/nousjoindre/nousjoindre.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -53,7 +52,6 @@ const Approutes:Routes=[
   {path:'Services/Conception',canActivate: [AuthGuardService],component:ConceptionComponent},
   {path:'Services/formation',canActivate: [AuthGuardService],component:FormationComponent},
   {path:'Services/Offremploi',canActivate: [AuthGuardService],component:OffremploiComponent},
-  {path:'Quisommesnous/Partenaires',canActivate: [AuthGuardService],component:PartenaireComponent},
   {path:'Quisommesnous/Realisation',canActivate: [AuthGuardService],component:RealisationComponent},
   {path:'Quisommesnous/SoftHouse',canActivate: [AuthGuardService],component:SoftHouseComponent},
   { path: ' ', redirectTo: 'Accueil', pathMatch: 'full' },
@@ -73,7 +71,6 @@ const Approutes:Routes=[
     QuisommesnousComponent,
     SoftHouseComponent,
     RealisationComponent,
-    PartenaireComponent,
     NousjoindreComponent,
     ListconceptionComponent,
     FormationComponent,
